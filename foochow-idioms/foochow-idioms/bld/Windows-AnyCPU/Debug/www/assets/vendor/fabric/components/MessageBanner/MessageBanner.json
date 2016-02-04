@@ -1,0 +1,9 @@
+﻿{
+  "name": "MessageBanner",
+  "notes": "A component for displaying errors",
+  "template": "MessageBanner.html",
+  "class": "ms-MessageBanner",
+  "dependencies": [
+    "Button"
+  ]
+}

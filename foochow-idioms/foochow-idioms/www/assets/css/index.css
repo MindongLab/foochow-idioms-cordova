@@ -1,0 +1,183 @@
+body{
+    overflow: hidden;
+    margin: 0 0 0 0;
+    height:100%;
+}
+#headerBar{
+    height:40px;
+    /*background-color: black;*/
+    position: absolute;
+    top:0px;
+    left: 0px;
+    right:0px;
+    width: 100%;
+}
+
+#logoRegion{
+    display: block;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    bottom:0px;
+    width:300px;
+    /*background: gray;*/
+}
+
+#hamburgerButton{
+    display:none;
+}
+
+#commandRegion{
+    position: absolute;
+    left: 300px;
+    top:0px;
+    bottom:0px;
+    right: 0px;
+    /*background: gray;*/
+}
+
+#mainContainer{
+    position:absolute;
+    top:40px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    background-color: aquamarine;
+    width: 100%;
+}
+
+/* Sidebar */
+#sideBar{
+    position: absolute;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    width:300px;
+    overflow-y: hidden;
+    overflow-x:hidden;
+}
+
+
+.SearchBox {
+    width:100%;
+}
+
+.resultList {
+    position: absolute;
+    top: 32px;
+    bottom: 0px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+
+.tagButton {
+    display:inline-block;
+    position:relative;
+    background-color: #EAEAEA;
+    height:32px;
+}
+
+.tagButton-hide {
+    display:none;
+}
+
+.tagButton-text{
+    padding-right:35px;
+    padding-left:3px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 32px;
+}
+.tagButton-removeButton {
+    height:32px;
+    width: 32px;
+    position: absolute;
+    top:0px;
+    right:0px;
+    text-align: center;
+}
+
+.tagButton-removeButton > i {
+    line-height: 32px;
+}
+
+.tagButton-removeButton:hover {
+    background-color:#C8C8C8;
+}
+
+#mainPane{
+    position: absolute;
+    top:0px;
+    left:300px;
+    bottom:0px;
+    right:0px;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.imgLogoWrapper {
+    text-align: center;
+}
+
+.imgLogo {
+    width: 60%;
+    max-width: 310px;
+    display:block;
+    margin: 0 auto;
+}
+
+.featureButton {
+    padding-top:10px;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.featureButton-icon {
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.featureButton-text {
+    line-height: 35px;
+}
+
+#contentWrapper{
+    padding-left: 20px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    margin-top:30px;
+}
+
+#detailsHeader{
+    border-bottom: 1px dotted #71AFE5;
+    padding-bottom: 10px;
+}
+
+.playLabel {
+    position:relative;
+    top:4px;
+    left:09px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#detailsWrapper{
+    margin-top:20px;
+    padding-left:20px;
+}
+
+.highlight {
+    background-color: #C7E0F4;
+}
+
+.playButton {
+    font-size:32px;
+}
+
+.charSymbol{
+    padding-left: 2px;
+    padding-right: 2px;
+
+}
