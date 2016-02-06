@@ -1,0 +1,14 @@
+<div class="list-block">
+    <ul>
+        <li ng-repeat="item in (list | filter:filterString)">
+            <a href="#detailPage" class="item-link" ng-click="listItemClicked(item)">
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">{{item}}</div>
+                    </div>
+                </div>
+            </a>
+        </li>
+
+    </ul>
+</div>
