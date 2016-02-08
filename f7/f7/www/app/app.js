@@ -1,20 +1,21 @@
 (function () {
     'use strict';
 
-    MyApp.fw7 = {
-        app : new Framework7({
-        animateNavBackIcon: true
-    }),
-        options: {
-        dynamicNavbar: true,
-        domCache: true
-    }, 
-        views: []
-    };
-
+    MyApp.fw7App = new Framework7({
+        animateNavBackIcon: true,
+        material: true,
+        materialPageLoadDelay: 10,
+        swipeout: false,
+        sortable: false
+    });
+    var $$ = Dom7;
+    
+    MyApp.mainView = MyApp.fw7App.addView('.view-main');
+    MyApp.ns('MyApp.constant');
+    MyApp.constant.SERVER_API_URL="http://fiapi.radiumz.org:2052/api";
+    MyApp.constant.SERVER_AUDIO_URL="audio/";
    
-   MyApp.angular = angular.module('MyApp', []);
-   MyApp.angular.constant("SERVER_API_URL","http://fiapi.radiumz.org:2052/api");
-   MyApp.angular.constant("SERVER_AUDIO_URL","http://idioms.mindong.asia/assets/audio/");        
+
+
 
 }());

@@ -1,46 +1,38 @@
-(function () {
+(function ($) {
     "use strict";
-    MyApp.angular.factory('DataService', ['$http', '$q', 'SERVER_API_URL', function ($http, $q, SERVER_API_URL) {
-        return {
-            getAllIdioms: getAllIdioms,
-            getIdiomsByTag: getIdiomsByTag,
-            getIdiomByText: getIdiomByText,
-            getGlype: getGlyph
-        };
+    var SERVER_API_URL = MyApp.constant.SERVER_API_URL;
+    MyApp.ns('MyApp.service.DataService');
+    MyApp.service.DataService.getAllIdioms = function () {
+        return $.getJSON(SERVER_API_URL + '/all/').then(function (data) {
+            return data;
+        }, function () {
+            return 'e';
+        });
+    };
 
-        function getAllIdioms() {
-            return $q.when($http.get(SERVER_API_URL + '/all/').then(function (r) {
-                return r.data;
-            }).catch(function () {
-                console.log('DataService: Error in getAllIdioms()');
-                return $q.reject('e');
-            })
-                );
-        }
+    MyApp.service.DataService.getIdiomsByTag = function (tagName) {
+        return $.getJSON(SERVER_API_URL + '/tag/' + tagName).then(function (data) {
+            return data;
+        }, function () {
+            return 'e';
+        });
+    };
 
-        function getIdiomsByTag(tagName) {
-            return $q.when($http.get(SERVER_API_URL + '/tag/' + tagName).then(function (r) {
-                return r.data;
-            }).catch(function () {
-                return $q.reject('e');
-            }));
-        }
+    MyApp.service.DataService.getGlyph = function (ids) {
+        return $.getJSON(SERVER_API_URL + '/glyph/' + ids).then(function (data) {
+            return data;
+        }, function () {
+            return 'e';
+        });
+    };
 
-        function getGlyph(ids) {
-            return $q.when($http.get(SERVER_API_URL + '/glyph/' + ids).then(function (r) {
-                return r.data;
-            }).catch(function () {
-                return $q.reject('e');
-            }));
-        }
+    MyApp.service.DataService.getIdiomByText = function (text) {
+        return $.getJSON(SERVER_API_URL + '/sentence/' + text).then(function (data) {
+            return data;
+        }, function () {
+            return $q.reject('e');
+        });
+    };
 
-        function getIdiomByText(text) {
-            return $q.when($http.get(SERVER_API_URL + '/sentence/' + text).then(function (r) {
-                return r.data;
-            }).catch(function () {
-                return $q.reject('e');
-            }));
-        }
-    }]);
-        
-}());
+
+} (jQuery));

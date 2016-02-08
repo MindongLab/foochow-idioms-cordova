@@ -1,28 +1,23 @@
 (function () {
     "use strict";
-    MyApp.angular.factory('KageService', ['DataService', '$q', function (dataService, $q) {
-        return {
-            getKage: getKage,
-            getGlypeImage: getGlypeImage
-        };
-
+    MyApp.ns('MyApp.service.KageService');
+    MyApp.service.KageService.getKage = getKage;
+    MyApp.service.KageService.getGlyphImage = getGlyphImage;
+    var dataService = MyApp.service.DataService;
+    
         function getKage(ids, canvas) {
-            return $q.when(dataService.getGlype(ids)).then(function (r) {
+            return dataService.getGlyph(ids).then(function (r) {
                 drawKage(r["field_kanjivg"], canvas);
                 return canvas;
-            }).catch(function (){
-                return $q.reject('e');
             });
         }
         
-        function getGlypeImage(str, size, id) {
+        function getGlyphImage(str, size, id) {
             var can = document.createElement('canvas');
             can.height=size;
             can.width=size;
             return getKage(str, can).then(function (can) {
                 return {id:id, data: can.toDataURL()};
-            }).catch(function (){
-                return $q.reject('e');
             });
         }
                                                   
@@ -53,6 +48,5 @@
             }
         }
         
-    }]);
         
 }());
