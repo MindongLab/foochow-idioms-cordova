@@ -17,3 +17,12 @@ body {
     font-size:30px;
 }
 
+.overlay.splashscreen {
+    z-index: 10000;
+    position: absolute;
+    top:0px;
+    bottom: 0px;
+    left:0px;
+    right:0px;
+    background-color:aquamarine;
+}

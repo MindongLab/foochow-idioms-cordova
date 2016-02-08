@@ -52,6 +52,16 @@
             var renderer = MyApp.cache.compliedTemplate['contentTemplate'];
             var renderedHtml = renderer(context);
             $$(page.container).find(".page-content").html(renderedHtml);
+            
+            //Attach events
+            $$(page.container).find('.playAudioButton').on('click', function(e){
+                console.log(e);
+                var filename=$$(e.srcElement).attr('data-audio-path');
+                var uri = MyApp.constant.SERVER_AUDIO_URL + filename.replace('.wma', '.mp3'),
+                        sound = new Howl({
+                            urls: [uri]
+                        }).play();
+            });
 
         }, function () {
             console.log('detailsCtrl: view change failed.');

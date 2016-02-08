@@ -60,12 +60,11 @@
                 '<div class="item-title-row">' +
                 '<div class="item-title">{{title}}</div>' +
                 '</div>' +
-                '<div class="item-subtitle">{{subtitle}}</div>' +
                 '</div>' +
                 '</a>' +
                 '</li>',
                 // Item height
-                height: 73,
+                height: 55,
             });
         })
 

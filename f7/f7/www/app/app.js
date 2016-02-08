@@ -16,6 +16,7 @@
     MyApp.constant.SERVER_API_URL="http://fiapi.radiumz.org:2052/api";
     MyApp.constant.SERVER_AUDIO_URL="audio/";
    
+    Dom7('.overlay.splashscreen').remove();
 
 
 
