@@ -6,7 +6,8 @@
         material: true,
         materialPageLoadDelay: 10,
         swipeout: false,
-        sortable: false
+        sortable: false,
+        pushState: true
     });
     var $$ = Dom7;
     

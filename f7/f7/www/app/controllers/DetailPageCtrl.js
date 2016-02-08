@@ -2,6 +2,7 @@
     "use strict";
     MyApp.fw7App.onPageInit('detailPage', function (page) {
         
+        
         /** $$tagClicked = function (tagName) {
              $rootScope.$emit("switchToTag", {'tag': tagName});
              $rootScope.$emit("toggleSidebar", {'state': true});
@@ -56,6 +57,16 @@
             console.log('detailsCtrl: view change failed.');
         });
         
+        
+        $$(page.container).find('.shareButton').on('click', function() {
+            document.addEventListener('deviceready', function() {
+                setTimeout(function(){
+                    plugins.socialsharing.share('Message only');
+                });
+                
+            });
+            console.log('share');
+        })
         
 
     });

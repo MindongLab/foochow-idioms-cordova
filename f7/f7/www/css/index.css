@@ -17,29 +17,3 @@ body {
     font-size:30px;
 }
 
-.panel {
-    background-color: #71AFE5;
-}
-
-.panel .list-block .item-content {
-    background-color: #71AFE5;
-    border-bottom: 1px solid #C7E0F4;
-}
-
-.panel .list-block i {
-    color: #fafafa;
-}
-
-.panel .list-block .item-title {
-    color: #fafafa;
-}
-
-
-
-.navbar-inner {
-    background-color: #0078D7;
-}
-
-.icon.icon-back.color-white {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2012%2020'%3E%3Cpath%20d%3D'M10%2C0l2%2C2l-8%2C8l8%2C8l-2%2C2L0%2C10L10%2C0z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
-}

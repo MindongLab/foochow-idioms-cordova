@@ -55,7 +55,7 @@
                 },
                 // List item Template7 template
                 template: '<li>' +
-                '<a href="/pages/DetailPage.tpl.html?text={{title}}" class="item-link item-content">' +
+                '<a href="pages/DetailPage.tpl.html?text={{title}}" class="item-link item-content">' +
                 '<div class="item-inner">' +
                 '<div class="item-title-row">' +
                 '<div class="item-title">{{title}}</div>' +

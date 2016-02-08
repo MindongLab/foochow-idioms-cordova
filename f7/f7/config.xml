@@ -105,4 +105,5 @@
   <preference name="xwalkMultipleApk" value="true" />
   <plugin name="cordova-plugin-crosswalk-webview" version="1.4.0" />
   <plugin name="cordova-plugin-crosswalk-webview" version="1.4.0" src="C:\Downloads\cordova-plugin-crosswalk-webview-1.4.0" />
+  <plugin name="cordova-plugin-x-socialsharing" version="5.0.10" src="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git" />
 </widget>
