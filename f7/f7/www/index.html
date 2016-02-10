@@ -48,8 +48,13 @@
                     </div>
                     <!-- Scrollable page content-->
                     <div class="page-content">
-                        <div class="content-block-title">每日一句</div>
-                        <div class="content-block">
+                        <div class="card">
+                            <div class="card-header">每日一句</div>
+                            <div class="card-content">
+                                <div class="card-content-inner">Card with header and footer. Card header is used to display card title and footer for some
+                                    additional information or for custom actions.</div>
+                            </div>
+                            <div class="card-footer"><a class="link">更多</a></div>
                         </div>
                         <div class="content-block-title">功能</div>
                         <div class="content-block">
@@ -67,7 +72,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="row" style="margin-top: 50px">
+                            <div class="row" style="margin-top: 30px">
                                 <div class="col-50">
                                     <a href="pages/SettingsPage.tpl.html" class="featureButton button button-big button-fill button-raised color-blue">
                                         <div><i class="featureButton-Icon fa fa-cogs"></i></div>
@@ -78,7 +83,7 @@
                                     <a href="pages/HelpPage.tpl.html" class="featureButton button button-big button-fill button-raised color-blue">
                                         <div><i class="featureButton-Icon fa fa-question"></i></div>
                                         <div class="featureButton-Text">帮助</div>
-                                        </a>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +95,19 @@
             </div>
         </div>
     </div>
-
+    <div class="popover popover-menu" style="width:200px">
+        <div class="popover-inner">
+            <div class="list-block">
+                <ul>
+                    <li><a href="#" class="list-button item-link shareButton">分享</a></li>
+                    <li><a href="#" class="list-button item-link favoriteButton">收藏</a></li>
+                    <li><a href="#" class="list-button item-link saveButton">保存到图库</a></li>
+                    <li><a href="#" class="list-button item-link feedbackButton">词条纠错</a></li>
+                    <li><a href="#" class="list-button item-link color-red recordButton">我要录音</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <script src="scripts/platformOverrides.js"></script>
 
     <!-- Cordova reference, this is added to your app when it's built. -->
@@ -105,11 +122,13 @@
     <!-- Path to your app js-->
     <script type="text/javascript" src="app/ns.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/controllers/IndexPageCtrl.js"></script>
     <script type="text/javascript" src="app/controllers/ListPageCtrl.js"></script>
     <script type="text/javascript" src="app/controllers/TagsPageCtrl.js"></script>
     <script type="text/javascript" src="app/controllers/DetailPageCtrl.js"></script>
     <script type="text/javascript" src="app/services/DataService.js"></script>
     <script type="text/javascript" src="app/services/KageService.js"></script>
+    <script type="text/javascript" src="app/services/PicService.js"></script>
 
 
 </body>

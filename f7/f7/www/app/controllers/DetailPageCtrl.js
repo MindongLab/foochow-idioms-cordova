@@ -47,7 +47,7 @@
                 }
             }
             console.log(context);
-            
+            MyApp.global.currentIdiom = {'id': page.query.id, 'text': context.result.field_text}; 
             //Render template
             var renderer = MyApp.cache.compliedTemplate['contentTemplate'];
             var renderedHtml = renderer(context);
@@ -68,25 +68,14 @@
         });
         
         
-        $$(page.container).find('.shareButton').on('click', function() {
-            document.addEventListener('deviceready', function() {
-                setTimeout(function(){
-                    plugins.socialsharing.share('Message only');
-                });
-                
-            });
-            console.log('share');
-        })
+
         
 
     });
         
-                            
-    function switchToIdiom(text) {
-        if (text) {
-            MyApp.fw7.app.showIndicator();
 
-        }
+                            
+
         var highOn = function (annoId) {
             var indices = $scope.result['field_annotations'][annoId]['indices'];
             var i;
@@ -104,7 +93,7 @@
             }
             $scope.highlightAnno[annoId] = false;
         };
-    };
+
 
 
 } (Dom7));

@@ -1,34 +1,48 @@
-(function () {
+(function ($$, $) {
     "use strict";
-    MyApp.angular.controller('IndexPageCtrl', ['$scope', '$rootScope', "KageService", "InitService", function ($scope, $rootScope, kageService, initService) {
-        $scope.featureClicked = function (id) {
-            switch (id) {
-                case 1:  //List All
-                    //show sideBar
-                    $rootScope.$emit("toggleSidebar", { 'state': true });
-                    //remove tag filter
-                    $rootScope.$emit("switchToTag", { 'tag': "" });
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    $location.path('/help');
-                    $rootScope.$emit("toggleSidebar", { 'state': false });
-                    break;
-            }
-        };
+    MyApp.fw7App.onPageInit('indexPage', function (page) {
 
-        $scope.draw = function () {
-            var can = document.createElement('canvas');
-            can.height = 300;
-            can.width = 300;
-            kageService.getKage("𣍐", can).then(function () {
-                console.log(can.toDataURL());
+    });
+    
+    //Attach event handlers to popover menu
+    $(document).ready(function () {
+        $$('.shareButton').on('click', function () {
+            document.addEventListener('deviceready', function () {
+                setTimeout(function () {
+                    if (MyApp.global.currentIdiom && MyApp.global.currentIdiom.text) {
+                        plugins.socialsharing.share(MyApp.global.currentIdiom.text);
+                    }
+
+                }, 100);
+
             });
+            console.log('share');
+            console.log(MyApp.global.currentIdiom);
+        });
+        
+        $$('.favoriteButton').on('click', function () {
+            //TODO MyApp.service.FavoriteService
+            console.log('favorite');
+            console.log(MyApp.global.currentIdiom);
+        });
+        
+        $$('.saveButton').on('click', function () {
+            //TODO Save image and audio
+            console.log('save');
+            console.log(MyApp.global.currentIdiom);
+        });
+        
+        $$('.feedbackButton').on('click', function () {
+            //TODO 
+            console.log('feedback');
+            console.log(MyApp.global.currentIdiom);
+        });
+        
+        $$('.recordButton').on('click', function () {
+            //TODO 
+            console.log('record');
+            console.log(MyApp.global.currentIdiom);
+        });
+    });
 
-        }
-        $scope.title="hihihi";
-        console.log('IndexPageCtrl');
-
-    }]);
-}());
+} (Dom7, jQuery));

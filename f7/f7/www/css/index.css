@@ -60,3 +60,58 @@ body {
     top: 20px;
     font-size: 20px;
 }
+
+.fa.icon {
+    width: 24px;
+    height: 24px;
+    text-align:center;
+    line-height: 24px;
+    font-size: 24px;
+}
+
+.IdiomDetails.content-block {
+    margin-top: 10px;
+}
+
+.IdiomDetails.IdiomText {
+    font-size: 28px;
+}
+
+.IdiomDetails.Header {
+    border-bottom: 1px lightgray solid;
+    margin-bottom: 10px;
+    
+}
+
+.IdiomDetails.playAudioButton {
+    width: 130px;
+}
+
+.IdiomDetails.TextTag {
+    display: inline;
+    margin-right: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 17px;
+    color: #ffffff;
+    background-color: #5ac8fa;
+}
+.IdiomDetails.TextBlock{
+    margin-top:10px;
+    
+}
+
+.IdiomDetails.Anno {
+    position:relative;
+    left: -10px;
+    list-style-type: decimal;
+}
+
+.IdiomDetails.AnnoTitle{
+    font-size: 17px;
+}
+
+
+.IdiomDetails li{
+    padding-bottom: 10px;
+}
