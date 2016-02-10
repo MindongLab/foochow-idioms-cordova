@@ -26,7 +26,8 @@
 
 <body>
     <div class="overlay splashscreen">
-        
+        <img src="images/logo-310.png" class="splashscreen-Logo" />
+        <div class="splashscreen-Text">福州话熟语大全</div>
     </div>
     <!-- Views-->
     <div class="views">
@@ -47,35 +48,42 @@
                     </div>
                     <!-- Scrollable page content-->
                     <div class="page-content">
-                        <div class="content-block-title">Welcome To My Awesome App</div>
+                        <div class="content-block-title">每日一句</div>
                         <div class="content-block">
-                            <div class="content-block-inner">
-                                <p>Couple of worlds here because my app is so awesome!</p>
-                                <p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum
-                                    aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>
-                            </div>
                         </div>
-                        <div class="content-block-title">Features</div>
-                        <div class="list-block">
-                            <ul>
-                                <li>
-                                    <a href="pages/ListPage.tpl.html" class="item-link">
-                                        <div class="item-content">
-                                            <div class="item-inner">
-                                                <div class="item-title">All</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="content-block-title">Side panels</div>
+                        <div class="content-block-title">功能</div>
                         <div class="content-block">
                             <div class="row">
-                                <div class="col-50"><a href="#" data-panel="left" class="button open-panel">Left Panel</a></div>
-
+                                <div class="col-50">
+                                    <a href="pages/ListPage.tpl.html" class="featureButton button button-big button-fill button-raised color-blue">
+                                        <div><i class="featureButton-Icon fa fa-list"></i></div>
+                                        <div class="featureButton-Text">全部条目</div>
+                                    </a>
+                                </div>
+                                <div class="col-50">
+                                    <a href="pages/TagsPage.tpl.html" class="featureButton button button-big button-fill button-raised color-green">
+                                        <div><i class="featureButton-Icon fa fa-tags"></i></div>
+                                        <div class="featureButton-Text">按分类</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 50px">
+                                <div class="col-50">
+                                    <a href="pages/SettingsPage.tpl.html" class="featureButton button button-big button-fill button-raised color-blue">
+                                        <div><i class="featureButton-Icon fa fa-cogs"></i></div>
+                                        <div class="featureButton-Text">设置</div>
+                                    </a>
+                                </div>
+                                <div class="col-50">
+                                    <a href="pages/HelpPage.tpl.html" class="featureButton button button-big button-fill button-raised color-blue">
+                                        <div><i class="featureButton-Icon fa fa-question"></i></div>
+                                        <div class="featureButton-Text">帮助</div>
+                                        </a>
+                                </div>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
 
@@ -98,6 +106,7 @@
     <script type="text/javascript" src="app/ns.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/controllers/ListPageCtrl.js"></script>
+    <script type="text/javascript" src="app/controllers/TagsPageCtrl.js"></script>
     <script type="text/javascript" src="app/controllers/DetailPageCtrl.js"></script>
     <script type="text/javascript" src="app/services/DataService.js"></script>
     <script type="text/javascript" src="app/services/KageService.js"></script>

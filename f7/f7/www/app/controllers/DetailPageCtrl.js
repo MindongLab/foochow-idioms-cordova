@@ -22,9 +22,9 @@
         
         console.log(page.query);
 
-        var queryText = page.query.text;
+        var queryId = page.query.id;
         
-        dataService.getIdiomByText(queryText).then(function (r) {
+        dataService.getIdiomById(queryId).then(function (r) {
             var context = {};
             context.result = r;
             context.hasAnnotation = (r.field_annotations && r.field_annotations.length>0);

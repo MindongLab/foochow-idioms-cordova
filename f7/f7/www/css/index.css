@@ -24,5 +24,39 @@ body {
     bottom: 0px;
     left:0px;
     right:0px;
-    background-color:aquamarine;
+    background-color:#ffffff;
+}
+
+.splashscreen-Logo {
+    position:absolute;
+    top: 25%;
+    left: 35%;
+    width:30vw;
+}
+
+.splashscreen-Text {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 25%;
+    font-size: 8vw;
+    color: #0078D7;
+  
+}
+
+
+.button.button-big.featureButton {
+    height:126px;
+}
+
+.featureButton-Icon {
+    font-size: 40px;
+    position:relative;
+    top: 25px;
+}
+
+.featureButton-Text {
+    position: relative;
+    top: 20px;
+    font-size: 20px;
 }

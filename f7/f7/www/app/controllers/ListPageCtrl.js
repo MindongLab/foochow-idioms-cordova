@@ -33,13 +33,21 @@
         //TODO bind events
         //$$().on('',function(e){})
         
-        
-        // Generate array with 10000 demo items:
+        var tagText = page.query.tag || undefined;
+        console.log(tagText);
        
-        MyApp.service.DataService.getAllIdioms().done(function (data) {
+        if (tagText) {
+            MyApp.service.DataService.getIdiomsByTag(tagText).done(renderPage);
+            $$(page.container).find('.pageTitle').html(tagText);
+        } else {
+            MyApp.service.DataService.getAllIdioms().done(renderPage);
+        }
+        
+        
+        function renderPage(data) {
             var items = [];
             for (var i=0; i< data.length; i++) {
-                items.push({title:data[i], subtitle:'#'+i});
+                items.push({title:data[i]['field_text'], id:data[i]['_id']});
             }
             // Create virtual list
             var virtualList = MyApp.fw7App.virtualList($$(page.container).find('.virtual-list'), {
@@ -55,7 +63,7 @@
                 },
                 // List item Template7 template
                 template: '<li>' +
-                '<a href="pages/DetailPage.tpl.html?text={{title}}" class="item-link item-content">' +
+                '<a href="pages/DetailPage.tpl.html?id={{id}}" class="item-link item-content">' +
                 '<div class="item-inner">' +
                 '<div class="item-title-row">' +
                 '<div class="item-title">{{title}}</div>' +
@@ -66,8 +74,7 @@
                 // Item height
                 height: 55,
             });
-        })
-
+        }
 
     });
 
