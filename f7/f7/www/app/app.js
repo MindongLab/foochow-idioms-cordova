@@ -19,7 +19,7 @@
    
     window.setTimeout(function () {
         Dom7('.overlay.splashscreen').remove();
-    }, 2000);
+    }, 1000);
     
 
 

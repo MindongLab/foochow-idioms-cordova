@@ -99,15 +99,34 @@
         <div class="popover-inner">
             <div class="list-block">
                 <ul>
-                    <li><a href="#" class="list-button item-link shareButton">分享</a></li>
-                    <li><a href="#" class="list-button item-link favoriteButton">收藏</a></li>
-                    <li><a href="#" class="list-button item-link saveButton">保存到图库</a></li>
-                    <li><a href="#" class="list-button item-link feedbackButton">词条纠错</a></li>
-                    <li><a href="#" class="list-button item-link color-red recordButton">我要录音</a></li>
+                    <li><a href="#" class="list-button item-link shareButton close-popover">分享</a></li>
+                    <li><a href="#" class="list-button item-link favoriteButton close-popover">收藏</a></li>
+                    <li><a href="#" class="list-button item-link saveButton close-popover">保存到图库</a></li>
+                    <li><a href="#" class="list-button item-link feedbackButton close-popover">词条纠错</a></li>
+                    <li><a href="#" class="list-button item-link color-red recordButton close-popover">我要录音</a></li>
                 </ul>
             </div>
         </div>
     </div>
+    <script type="text/template7" id="sharePopup">
+
+        <div class="page" data-page="sharepage">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left sliding">
+                        <a href="index" class="link back">
+                            <i class="icon icon-back"></i><span>返回</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="page-content">
+                <div style="text-align:center; padding-top:20px; width:100%">
+                    <img src="{{data}}" style="width:80%; max-width:640px" />
+                </div>
+            </div>
+        </div>
+    </script>
     <script src="scripts/platformOverrides.js"></script>
 
     <!-- Cordova reference, this is added to your app when it's built. -->
@@ -119,6 +138,7 @@
     <script type="text/javascript" src="app/js/utils.js"></script>
     <script type="text/javascript" src="vendor/kage-engine/all.min.js"></script>
     <script type="text/javascript" src="vendor/howlerjs/howler.min.js"></script>
+    <script type="text/javascript" src="vendor/createjs/easeljs-0.8.2.min.js"></script>
     <!-- Path to your app js-->
     <script type="text/javascript" src="app/ns.js"></script>
     <script type="text/javascript" src="app/app.js"></script>

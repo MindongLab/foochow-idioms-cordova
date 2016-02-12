@@ -47,7 +47,7 @@
                 }
             }
             console.log(context);
-            MyApp.global.currentIdiom = {'id': page.query.id, 'text': context.result.field_text}; 
+            MyApp.global.currentIdiom = {'id': page.query.id, 'text': context.result.field_text, 'data':context.result}; 
             //Render template
             var renderer = MyApp.cache.compliedTemplate['contentTemplate'];
             var renderedHtml = renderer(context);
