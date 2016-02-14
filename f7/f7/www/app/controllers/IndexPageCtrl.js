@@ -12,17 +12,9 @@
             var renderer = MyApp.cache.compliedTemplate['shareTemplate'];
 
             MyApp.service.PicService.draw(MyApp.global.currentIdiom.data).then(function (pic) {
-                var html = renderer({ 'data': pic });
+                var html = renderer({ 'data': pic, 'text': MyApp.global.currentIdiom.data.field_text});
                 MyApp.mainView.router.loadContent(html);
-                document.addEventListener('deviceready', function () {
-                    setTimeout(function () {
-                        if (MyApp.global.currentIdiom && MyApp.global.currentIdiom.text) {
-                            plugins.socialsharing.share(pic);
-                        }
 
-                    }, 100);
-
-                });
             })
 
             console.log('share');
@@ -53,5 +45,27 @@
             console.log(MyApp.global.currentIdiom);
         });
     });
+
+    MyApp.ns('MyApp.global');
+    MyApp.global.share = function () {
+        var pic = $$('#picShare').attr('src');
+        var message = '福州话熟语大全 - '+$$('#picShare').data('text');
+        document.addEventListener('deviceready', function () {
+            setTimeout(function () {
+                if (MyApp.global.currentIdiom && MyApp.global.currentIdiom.text) {
+                    plugins.socialsharing.share(message, null, pic,null);
+                }
+
+            }, 1000);
+
+        });
+        console.log(pic,message);
+    }
+
+    MyApp.fw7App.onPageInit('sharepage', function (page) {
+        $$(page.container).find('#shareNowButton').on('click', MyApp.global.share);
+    });
+
+    
 
 } (Dom7, jQuery));

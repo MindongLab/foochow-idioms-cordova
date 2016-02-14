@@ -5,16 +5,16 @@
     // MyApp.service.PicService.drawImage()
 
 
-    function makeText(x, y, text, size) {
+    function makeText(x, y, text, size, color) {
         var font = 'bold ' + size + "px Arial";
-        var r = new createjs.Text(text, font, "blue");
+        var r = new createjs.Text(text, font, color);
         r.x = x;
         r.y = y;
         return r;
     }
 
 
-    function drawLines(stage, startX, startY, limitX, limitY, fontsize, padding, textArray) {
+    function drawLines(stage, startX, startY, limitX, limitY, fontsize, padding,color, textArray) {
         var height = limitY - startY,
             width = limitX - startX,
             charPerLine = Math.floor(width / fontsize),
@@ -46,7 +46,7 @@
 
         for (var i = 0, j; i < lines.length; ++i) {
             for (j = 0; j < lines[i].length; ++j) {
-                stage.addChild(makeText(startX + j * fontsize, startY + i * (fontsize + padding), lines[i][j], fontsize));
+                stage.addChild(makeText(startX + j * fontsize, startY + i * (fontsize + padding), lines[i][j], fontsize,color));
             }
         }
         return lines.length * fontsize + (lines.length - 1) * padding;
@@ -70,7 +70,7 @@
             deferred.resolve(stage.toDataURL());
         });
         stage.addChild(bg);
-        var endheight = drawLines(stage, 30, 110, 610, 330, 60, 20, data.field_text);
+        var endheight = drawLines(stage, 30, 110, 610, 330, 60, 20, '#000000',data.field_text);
         var notes='';
         if (data.field_metaphor && data.field_metaphor.length>0) {
             notes='【比喻】'+data.field_metaphor;
@@ -78,7 +78,7 @@
         } else if (data.field_notes && data.field_notes.length>0) {
             notes='【解说】'+data.field_notes;
         }
-        drawLines(stage, 40, endheight + 130, 600, 530, 30, 10, notes);
+        drawLines(stage, 40, endheight + 130, 600, 530, 30, 10, '#2B88D8', notes);
         stage.update();
         return deferred;
     }
