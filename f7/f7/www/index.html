@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -11,7 +11,7 @@
         Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
         For details, see http://go.microsoft.com/fwlink/?LinkID=617521
     -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://fiapi.radiumz.org:2052 http://idioms.mindong.asia 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://fiapi.radiumz.org:2052 http://idioms.mindong.asia 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
 
     <title>My App</title>
     <!-- Path to Framework7 Library CSS-->
@@ -51,10 +51,9 @@
                         <div class="card">
                             <div class="card-header">每日一句</div>
                             <div class="card-content">
-                                <div class="card-content-inner">Card with header and footer. Card header is used to display card title and footer for some
-                                    additional information or for custom actions.</div>
+                                <div class="card-content-inner" id="idiomOfTheDay" style="font-size:32px"></div>
                             </div>
-                            <div class="card-footer"><a class="link">更多</a></div>
+                            <div class="card-footer"><a class="link" id="idiomOfTheDayLink">查看详细</a></div>
                         </div>
                         <div class="content-block-title">功能</div>
                         <div class="content-block">
@@ -99,7 +98,7 @@
         <div class="popover-inner">
             <div class="list-block">
                 <ul>
-                    <li><a href="#" class="list-button item-link shareButton close-popover">分享</a></li>
+                    <li><a href="#" class="list-button item-link shareButton close-popover">分享字图</a></li>
                     <li><a href="#" class="list-button item-link favoriteButton close-popover">收藏</a></li>
                     <li><a href="#" class="list-button item-link saveButton close-popover">保存到图库</a></li>
                     <li><a href="#" class="list-button item-link feedbackButton close-popover">词条纠错</a></li>
@@ -124,7 +123,8 @@
                 <div style="text-align:center; padding-top:20px; width:100%">
                     <img src="{{data}}" id="picShare" data-text="{{text}}" style="width:80%; max-width:640px" />
                 </div>
-                <a class="button button-round" id="shareNowButton">分享</a>
+                <div class="content-block"><a class="button button-round button-fill button-raised" id="shareNowButton">分享到其它 App</a>
+                </div>
 
             </div>
         </div>
@@ -151,7 +151,9 @@
     <script type="text/javascript" src="app/services/DataService.js"></script>
     <script type="text/javascript" src="app/services/KageService.js"></script>
     <script type="text/javascript" src="app/services/PicService.js"></script>
-
+    <script type-"text/javascript">
+        MyApp.fw7App.init();
+    </script>
 
 </body>
 

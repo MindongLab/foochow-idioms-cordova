@@ -108,4 +108,9 @@
   <plugin name="cordova-plugin-crosswalk-webview" version="1.4.0" src="C:\Downloads\cordova-plugin-crosswalk-webview-1.4.0" />
   <plugin name="cordova-plugin-x-socialsharing" version="5.0.10" src="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git" />
   <preference name="Orientation" value="portrait" />
+  <preference name="KeepRunning" value="True" />
+  <preference name="ShowTitle" value="True" />
+  <preference name="InAppBrowserStorageEnabled" value="True" />
+  <preference name="SuppressesIncrementalRendering" value="True" />
+  <plugin name="cordova-plugin-media" version="2.1.0" />
 </widget>

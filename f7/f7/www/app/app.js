@@ -7,9 +7,21 @@
         materialPageLoadDelay: 10,
         swipeout: false,
         sortable: false,
-        pushState: true
+        pushState: true,
+        init: false
     });
     var $$ = Dom7;
+    MyApp.fw7App.onPageInit('indexPage', function (page) {
+        MyApp.service.DataService.getAllIdioms().done(function (r) {
+            var selected = r[Math.floor((Math.random()*r.length))];
+            $$(page.container).find('#idiomOfTheDay').html(selected['field_text']);
+            $$(page.container).find('#idiomOfTheDayLink').attr('href', 'pages/DetailPage.tpl.html?id='+selected['_id']);
+            
+        });
+        console.log('ready');
+    });
+    
+    
     
     MyApp.mainView = MyApp.fw7App.addView('.view-main');
     MyApp.ns('MyApp.constant');

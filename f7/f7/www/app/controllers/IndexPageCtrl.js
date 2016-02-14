@@ -1,8 +1,6 @@
 (function ($$, $) {
     "use strict";
-    MyApp.fw7App.onPageInit('indexPage', function (page) {
 
-    });
     
     //Attach event handlers to popover menu
     $(document).ready(function () {
