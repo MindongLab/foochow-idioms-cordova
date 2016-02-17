@@ -55,12 +55,15 @@
             
             //Attach events
             $$(page.container).find('.playAudioButton').on('click', function(e){
-                console.log(e);
-                var filename=$$(e.srcElement).attr('data-audio-path');
-                var uri = MyApp.constant.SERVER_AUDIO_URL + filename.replace('.wma', '.mp3'),
-                        sound = new Howl({
-                            urls: [uri]
-                        }).play();
+                console.log(e.target);
+                var filename=$$(e.target).attr('data-audio-path');
+                var uri = MyApp.constant.SERVER_AUDIO_URL + filename.replace('.wma', '.mp3');
+                        //sound = new Howl({                           urls: [uri]                        }).play();
+                
+                document.addEventListener('deviceready', function () {
+                    var media = new Media(cordova.file.applicationDirectory+'www/'+uri);
+                    media.play();
+                });
             });
 
         }, function () {

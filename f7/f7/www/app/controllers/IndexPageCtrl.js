@@ -10,7 +10,7 @@
             var renderer = MyApp.cache.compliedTemplate['shareTemplate'];
 
             MyApp.service.PicService.draw(MyApp.global.currentIdiom.data).then(function (pic) {
-                var html = renderer({ 'data': pic, 'text': MyApp.global.currentIdiom.data.field_text});
+                var html = renderer({ 'data': pic, 'text': MyApp.global.currentIdiom.data.field_text });
                 MyApp.mainView.router.loadContent(html);
 
             })
@@ -28,6 +28,7 @@
         $$('.saveButton').on('click', function () {
             //TODO Save image and audio
             console.log('save');
+            // MyApp.service.PicService.draw(
             console.log(MyApp.global.currentIdiom);
         });
 
@@ -47,23 +48,33 @@
     MyApp.ns('MyApp.global');
     MyApp.global.share = function () {
         var pic = $$('#picShare').attr('src');
-        var message = '福州话熟语大全 - '+$$('#picShare').data('text');
+        var message = '福州话熟语大全 - ' + $$('#picShare').data('text');
         document.addEventListener('deviceready', function () {
             setTimeout(function () {
                 if (MyApp.global.currentIdiom && MyApp.global.currentIdiom.text) {
-                    plugins.socialsharing.share(message, null, pic,null);
+                    plugins.socialsharing.share(message, null, pic, null);
                 }
 
             }, 1000);
 
         });
-        console.log(pic,message);
-    }
+        console.log(pic, message);
+    };
+
+    MyApp.global.shareApp = function () {
+        var message = '我正在用 福州话熟语大全 App。一起来学习母语的精华，你也试试吧！ http://idioms.mindong.asia/#/apps';
+        document.addEventListener('deviceready', function () {
+            setTimeout(function () {
+                    plugins.socialsharing.share(message);
+            }, 1000);
+        });
+
+    };
 
     MyApp.fw7App.onPageInit('sharepage', function (page) {
         $$(page.container).find('#shareNowButton').on('click', MyApp.global.share);
     });
 
-    
+
 
 } (Dom7, jQuery));

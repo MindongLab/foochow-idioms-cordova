@@ -1,7 +1,6 @@
 (function () {
     "use strict";
     MyApp.ns('MyApp.service.KageService');
-    MyApp.service.KageService.getKage = getKage;
     MyApp.service.KageService.getGlyphImage = getGlyphImage;
     var dataService = MyApp.service.DataService;
     
@@ -11,7 +10,7 @@
                 return canvas;
             });
         }
-        
+        //Async
         function getGlyphImage(str, size, id) {
             var can = document.createElement('canvas');
             can.height=size;
