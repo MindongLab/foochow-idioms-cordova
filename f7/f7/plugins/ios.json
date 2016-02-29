@@ -1,0 +1,33 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "org.mindonglab.foochowidioms"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "org.mindonglab.foochowidioms"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "org.mindonglab.foochowidioms"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "org.mindonglab.foochowidioms"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "org.mindonglab.foochowidioms"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "org.mindonglab.foochowidioms"
+        },
+        "org.devgeeks.Canvas2ImagePlugin": {
+            "PACKAGE_NAME": "org.mindonglab.foochowidioms"
+        }
+    },
+    "dependent_plugins": {}
+}

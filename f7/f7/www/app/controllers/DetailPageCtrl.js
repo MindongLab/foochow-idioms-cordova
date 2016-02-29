@@ -61,7 +61,7 @@
                         //sound = new Howl({                           urls: [uri]                        }).play();
                 
                 document.addEventListener('deviceready', function () {
-                    var media = new Media(cordova.file.applicationDirectory+'www/'+uri);
+                    var media = new Media(uri);
                     media.play();
                 });
             });

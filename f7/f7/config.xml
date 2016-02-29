@@ -95,6 +95,8 @@
   <vs:platformSpecificValues>
     <vs:platformSpecificWidget id="org.mindonglab.foochowidioms" platformName="windows" />
   </vs:platformSpecificValues>
+  <preference name="WebViewBounce" value="false" />
+  <preference name="DisallowOverscroll" value="true" />
   <preference name="WindowsStoreDisplayName" value="Foochow Idioms" />
   <preference name="android-minSdkVersion" value="15" />
   <preference name="android-targetSdkVersion" value="22" />

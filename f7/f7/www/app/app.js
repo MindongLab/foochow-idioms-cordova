@@ -3,8 +3,8 @@
 
     MyApp.fw7App = new Framework7({
         animateNavBackIcon: true,
-        material: true,
-        materialPageLoadDelay: 10,
+        swipeBackPage:true,
+        scrollTopOnStatusbarClick:true,
         swipeout: false,
         sortable: false,
         pushState: true,
