@@ -5,6 +5,7 @@
         animateNavBackIcon: true,
         swipeBackPage:true,
         scrollTopOnStatusbarClick:true,
+        cache:false,
         swipeout: false,
         sortable: false,
         pushState: true,
