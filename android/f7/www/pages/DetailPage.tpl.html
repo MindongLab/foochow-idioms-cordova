@@ -1,0 +1,51 @@
+<div data-page="detailPage" class="page">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left sliding">
+                <a href="index" class="link back">
+                    <i class="icon icon-back"></i><span>返回</span>
+                </a>
+            </div>
+            <div class="center sliding">查看熟语</div>
+            <div class="right">
+                <a href="#" class="link color-white icon-only open-popover" data-popover=".popover-menu"> <i class="fa fa-ellipsis-v icon"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content">
+    </div>
+
+
+    <script id="contentTemplate" type="text/framework7">
+        <div class="IdiomDetails content-block">
+            <div class="IdiomDetails Header">
+                <div class="IdiomDetails IdiomText">{{result.field_text}}</div>
+                <a data-audio-path="{{result.field_audio}}" class="IdiomDetails playAudioButton button button-round"><i class="icon fa fa-volume-up"></i> 福州市区音</a>
+            </div>
+            {{#if result.field_metaphor}}
+            <div class="IdiomDetails TextBlock">
+                <div class="IdiomDetails TextTag">比喻</div>{{result.field_metaphor}}
+            </div>
+            {{/if}} {{#if result.field_notes}}
+            <div class="IdiomDetails TextBlock">
+                <div class="IdiomDetails TextTag">解说</div>{{result.field_notes}}
+            </div>
+            {{/if}} {{#if hasAnnotation}}
+            <div class="IdiomDetails TextBlock">
+                <div class="IdiomDetails TextTag">单字解释</div>
+                <div>
+                    <ul class="IdiomDetails Anno">
+                        {{#each result.field_annotations}}
+                        <li>
+                            <div class="IdiomDetails AnnoTitle">{{text}}</div>
+                            <div>{{explanation}}</div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </script>
+</div>
